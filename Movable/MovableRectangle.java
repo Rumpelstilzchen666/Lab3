@@ -21,6 +21,12 @@ public class MovableRectangle implements Movable {
     }
 
     @Override
+    public String toString() {
+        return "MovableRectangle: \n\ttopLeft = " + topLeft +
+                ";\n\tdownRight = " + downRight + '\n';
+    }
+
+    @Override
     public void moveUp() {
         topLeft.moveUp();
         downRight.moveUp();
