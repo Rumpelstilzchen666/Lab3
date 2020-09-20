@@ -1,21 +1,33 @@
 package Movable;
 
 public class MovablePoint implements Movable {
-    private int x = 0, y = 0, xSpeed = 0, ySpeed = 0;
+    private double x = 0, y = 0, xSpeed = 0, ySpeed = 0;
 
     MovablePoint() { }
 
-    MovablePoint(int x, int y) {
+    MovablePoint(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    MovablePoint(int x, int y, int xSpeed, int ySpeed) {
+    MovablePoint(double x, double y, double xSpeed, double ySpeed) {
         this.x = x;
         this.y = y;
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
+
+    public double getXSpeed() { return xSpeed; }
+    public void setXSpeed(double xSpeed) { this.xSpeed = xSpeed; }
+
+    public double getYSpeed() { return ySpeed; }
+    public void setYSpeed(double ySpeed) { this.ySpeed = ySpeed; }
+
+    public double getX() { return x; }
+    public void setX(double x) { this.x = x; }
+
+    public double getY() { return y; }
+    public void setY(double y) { this.y = y; }
 
     @Override
     public String toString() {

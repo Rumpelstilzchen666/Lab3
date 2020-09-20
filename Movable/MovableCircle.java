@@ -1,13 +1,18 @@
 package Movable;
 
-public class MovableCircle implements Movable {
-    private int radius;
+public class MovableCircle extends Shapes.Circle implements Movable {
     private MovablePoint center;
 
-    public MovableCircle(int x, int y, int xSpeed, int ySpeed, int radius) {
+    public MovableCircle() { center = new MovablePoint(); }
+
+    public MovableCircle(double x, double y) { center = new MovablePoint(x, y); }
+
+    public MovableCircle(double x, double y, double xSpeed, double ySpeed, double radius) {
         center = new MovablePoint(x, y, xSpeed, ySpeed);
         this.radius = radius;
     }
+
+    public MovablePoint getCenter() { return center; }
 
     @Override
     public String toString() {
@@ -15,22 +20,14 @@ public class MovableCircle implements Movable {
     }
 
     @Override
-    public void moveUp() {
-        center.moveUp();
-    }
+    public void moveUp() { center.moveUp(); }
 
     @Override
-    public void moveDown() {
-        center.moveDown();
-    }
+    public void moveDown() { center.moveDown(); }
 
     @Override
-    public void moveRight() {
-        center.moveRight();
-    }
+    public void moveRight() { center.moveRight(); }
 
     @Override
-    public void moveLeft() {
-        center.moveLeft();
-    }
+    public void moveLeft() { center.moveLeft(); }
 }

@@ -1,11 +1,11 @@
 package Movable;
 
-public class MovableRectangle implements Movable {
-    private MovablePoint topLeft, downRight;
+public class MovableRectangle extends Shapes.Rectangle implements Movable {
+    private MovablePoint topLeft;
 
-    public MovableRectangle(int x1, int y1, int x2, int y2, int xSpeed,
-            int ySpeed) {
-        int tmp;
+    public MovableRectangle(double x1, double y1, double x2, double y2,
+            double xSpeed, double ySpeed) {
+        double tmp;
         if (x1 < x2) {
             tmp = x1;
             x1 = x2;
@@ -16,31 +16,26 @@ public class MovableRectangle implements Movable {
             y1 = y2;
             y2 = tmp;
         }
+        length = x1 - x2;
+        width = y1 - y2;
         topLeft = new MovablePoint(x1, y2, xSpeed, ySpeed);
-        downRight = new MovablePoint(x2, y1, xSpeed, ySpeed);
     }
 
     @Override
-    public void moveUp() {
-        topLeft.moveUp();
-        downRight.moveUp();
-    }
+    public void moveUp() { topLeft.moveUp(); }
 
     @Override
-    public void moveDown() {
-        topLeft.moveDown();
-        downRight.moveDown();
-    }
+    public void moveDown() { topLeft.moveDown(); }
 
     @Override
-    public void moveRight() {
-        topLeft.moveRight();
-        downRight.moveRight();
-    }
+    public void moveRight() { topLeft.moveRight(); }
 
     @Override
-    public void moveLeft() {
-        topLeft.moveLeft();
-        downRight.moveLeft();
+    public void moveLeft() { topLeft.moveLeft(); }
+
+    @Override
+    public String toString() {
+        return "MovableRectangle: length = " + length + ", width = " + width +
+                ", topLeft = " + topLeft;
     }
 }
